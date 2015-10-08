@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<img src='http://w.qiandeer.com/qd/static/lock/images/rocker-test/x.jpg' />
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>国庆不要叫我加班！因为我要去……</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="http://w.qiandeer.com/qd/static/lock/assets/global.css" />
+    <style>
+    html{font-size:100%;}
+    body{background-color:#333333;font-size: 100%;}
+    .tip-layer{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    z-index: 9999;
+    text-align: right;
+    position: absolute;
+    display: none;
+    }
+    .tip-layer img{
+    width: 80%;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    }
+    #container{max-width:640px;margin:0 auto;min-width:320px;width:100%;}
+    #result,#join{width: 90%;background:white;border:#f5f5f5;border-radius: 10px;margin:1.5rem auto;padding-bottom:2.5rem;display: none;}
+    #join span{color:white;background:#13a7e5;border-radius: 6px 0 0 6px;width:24%;display: block;height: 100%;display: block;float:left;line-height: 2.8rem;letter-spacing: 4px;}
+    #input{width:92%;font-size:1rem;line-height:2.8rem;margin:2rem auto 0;text-align: center;height: 2.8rem;box-shadow:3px 3px 3px #e1e1e1;border-radius: 0px 6px 6px 0px}
+    #yourname{display: block;float:left;width:69%;height:2.8rem;margin:0px;padding:0px;border:0;padding-left: 4.6%;font-size: 1rem;letter-spacing: 1px}
+    #join a {width:92%;background-color:#e75735;color:white;display: block;text-align: center;margin:0 auto;letter-spacing: 1px;font-weight: bold;height: 2.8rem;line-height: 2.8rem;border-radius: 6px;margin-top:2rem; }
+    #join img{width:100%;border-radius: 6px 6px 0 0}
+    #start{box-shadow:3px 3px 3px #e1e1e1}
+    #download{width:26%;position: absolute;right: 5%;top:30%;}
+    #result{background: white;position: relative;overflow: hidden;}    
+    #pic{width:48%;margin:2rem auto 0;display: block;}
+    #title{text-align: center;}
+    hr{margin-bottom: 1rem;width:90%;}
+    #content{text-align: center;width:90%;margin:0 auto;}
+    #gotest,#share{display: block;width:55%;margin:1rem auto 0px;text-align: center;height: 2.6rem;line-height: 2.6rem;background-color:#13a7e5;box-shadow: 3px 3px 3px #e1e1e1;color:white;font-weight: bold;letter-spacing: 1px;border-radius: 6px;}
+    #gotest{background-color:#e75735;}
+    </style>
+    <script>
+        if( self == top ) {
+            document.documentElement.style.display = 'block' ;
+        }
+        else{
+            top.location = self.location ;
+        }
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?4b93dfaedb3bbc5474c9ff73f0ac9b70";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="tip-layer">
+  <img src="http://w.qiandeer.com/qd/static/lock/images/zhongqiu/share.png">
+</div>
+
+<div id='container'>
+  <div id="result">
+    <img id='download' src='http://w.qiandeer.com/qd/static/lock/images/zhongqiu/download.png'/>
+    <img id='pic'/>
+    <h3 id='title'><span id='getname'></span>最适合:<br/><span id='getcontent'></span></h3>
+    <hr />
+    <p id='content'></p>
+    <a href='#' id='share'>告诉小伙伴</a>
+    <a href='#' id='gotest'>我也测测</a>
+  </div>
+
+  <div id='join'>
+    <img src='http://w.qiandeer.com/qd/static/lock/images/guoqing/banner.png' />
+    <div id='input'>
+      <span>姓名</span><input id='yourname' type='text' placeholder='输入姓名' />
+    </div>
+    <a href='#' id='start'>Let's GO !</a>
+  </div>
+</div>
+
+  <script src="http://w.qiandeer.com/qd/static/lock/assets/zepto.js"></script>
+  <script src='http://w.qiandeer.com/qd/static/lock/lib/md5/dest/md5.min.js'></script>
+  <script>
+  
+
+  _hmt.push(['_trackEvent', 'gq-page-view', 'click']);
+
+  function getQueryStringArgs(){
+    var cq=location.search.length>0?location.search.substring(1):'';
+    var items=cq.split('&');
+    var item=null;
+    var name=null;
+    var value=null;
+    var args=[];
+    for(var i=0;i<items.length;i++){
+      var item=items[i].split('=');
+      var name=decodeURIComponent(item[0]);
+      var value=decodeURIComponent(item[1]);
+      if(name.length){
+      args[name]=value;
+      }
+    }
+    return args;
+  }
+
+  var args=getQueryStringArgs();
+
+  var yourname='';
+  var results=['去日本体验试衣间',
+                '去澳洲代购护肤品',
+                '去印度“坐”火车',
+                '去西安找叶良辰约架！',
+                '去迪拜捡垃圾'],
+      pics=['http://w.qiandeer.com/qd/static/lock/images/guoqing/1.png','http://w.qiandeer.com/qd/static/lock/images/guoqing/2.png','http://w.qiandeer.com/qd/static/lock/images/guoqing/3.png','http://w.qiandeer.com/qd/static/lock/images/guoqing/4.png','http://w.qiandeer.com/qd/static/lock/images/guoqing/5.png'],
+      intros=[
+            '日本的优衣库，你懂得！哦吼吼~',
+            '亲，我这可是正品澳洲海底火山泥面膜，不要拉黑朋友圈啊',
+            '咖喱给GAY，咖喱给GAY',
+            '赵日天表示不服！',
+            '如果你买不起肾6s，那就去迪拜捡垃圾吧。你可能会捡到法拉利、奔驰、奥迪……'];
+  if(args['uname']){
+    var uname=args['uname'];
+    var unum=args['unum'];
+    $('#pic')[0].src=pics[unum];
+    $('#getname').text(uname);
+    $('#getcontent').text(results[unum]);
+    $('#content').text(intros[unum]);
+    $('#result').show();
+    $('title').text('国庆不要叫'+uname+'加班 ！ 因为ta要'+results[unum]);
+  }
+  else{
+    $('#join').show();
+  }
+
+  $('#start').click(function(){
+    if($('#yourname').val()=="") alert('请先输入姓名！');
+    else{
+      yourname=$('#yourname').val();
+      $('#join').hide();
+      var temp=parseInt($.fn.md5(yourname).charAt(0),16)+1;
+      var temp=Math.ceil(temp%5);
+      var str='index.html?uname='+yourname+'&unum='+temp;
+      location.href=encodeURI(str); 
+    }
+    return false;
+  });
+
+  $('#download').click(function(){
+        _hmt.push(["_trackEvent", "gq-app-download", "click"]);
+        var f = navigator.userAgent;
+        var g = !! f.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+        if (g) {
+            location.href = "http://qiandeer.com?cne=153"
+        } else {
+            location.href = "http://lock.qiandeer.com/page/channel?cne=87";
+        }
+    });
+
+  $('#share').click(function(){
+    $('.tip-layer').show();
+    $('.tip-layer').click(function(){
+      $('.tip-layer').hide();
+    })
+  });
+
+  $('#gotest').click(function(){
+    _hmt.push(["_trackEvent", "gq-gotest", "click"]);
+    location.href='index.html';
+  });
+  </script>
+</body>
+</html>
